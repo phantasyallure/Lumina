@@ -17,6 +17,16 @@ import {
 const TOKENS_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
+  .lumina-app-shell{
+    width: 100%;
+    min-height: 100vh;
+    background: #EFEAE0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 12px;
+    font-family: var(--font-body);
+  }
   .lumina-root{
     --color-navy-900:#0B2545;
     --color-navy-700:#123A63;
@@ -59,6 +69,28 @@ const TOKENS_CSS = `
     box-shadow: 0 20px 60px rgba(11,37,69,0.18);
   }
   .lumina-root *{ box-sizing: border-box; }
+  @media (max-width: 480px){
+    .lumina-app-shell{
+      padding: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
+    }
+    .lumina-root{
+      width: 100vw;
+      min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
+      height: 100vh;
+      height: 100svh;
+      height: 100dvh;
+      max-width: none;
+      margin: 0;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+    }
+  }
   .lumina-scroll{ flex:1; overflow-y:auto; -ms-overflow-style:none; scrollbar-width:none; }
   .lumina-scroll::-webkit-scrollbar{ display:none; }
 
@@ -1165,7 +1197,7 @@ export default function LuminaApp() {
   }, [screen]);
 
   return (
-    <div style={{ width: '100%', minHeight: '100vh', background: '#EFEAE0', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px 12px', fontFamily: 'var(--font-body)' }}>
+    <div className="lumina-app-shell">
       <style>{TOKENS_CSS}</style>
       <div className="lumina-root">
         {pendingRatingFor && screen === 'providerDetail' && (
