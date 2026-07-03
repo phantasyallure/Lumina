@@ -1208,7 +1208,7 @@ export default function LuminaApp() {
           </div>
         )}
         {content}
-      </div>
+      </div> 
     </div>
   );
 }
