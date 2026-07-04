@@ -19,12 +19,10 @@ const TOKENS_CSS = `
 
   .lumina-app-shell{
     width: 100%;
-    min-height: 100vh;
-    background: #EFEAE0;
+    min-height: 100dvh;
+    background: var(--color-bg, #FBFAF6);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 12px;
+    padding: 0;
     font-family: var(--font-body);
   }
   .lumina-root{
@@ -57,40 +55,18 @@ const TOKENS_CSS = `
     background: var(--color-bg);
     position: relative;
     width: 100%;
-    max-width: 412px;
-    margin: 0 auto;
-    min-height: 780px;
-    height: 780px;
+    max-width: none;
+    margin: 0;
+    min-height: 100dvh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 28px;
-    border: 1px solid var(--color-line);
-    box-shadow: 0 20px 60px rgba(11,37,69,0.18);
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
   }
   .lumina-root *{ box-sizing: border-box; }
-  @media (max-width: 480px){
-    .lumina-app-shell{
-      padding: 0;
-      min-height: 100vh;
-      min-height: 100svh;
-      min-height: 100dvh;
-    }
-    .lumina-root{
-      width: 100vw;
-      min-height: 100vh;
-      min-height: 100svh;
-      min-height: 100dvh;
-      height: 100vh;
-      height: 100svh;
-      height: 100dvh;
-      max-width: none;
-      margin: 0;
-      border-radius: 0;
-      border: none;
-      box-shadow: none;
-    }
-  }
   .lumina-scroll{ flex:1; overflow-y:auto; -ms-overflow-style:none; scrollbar-width:none; }
   .lumina-scroll::-webkit-scrollbar{ display:none; }
 
@@ -1208,7 +1184,7 @@ export default function LuminaApp() {
           </div>
         )}
         {content}
-      </div> 
+      </div>
     </div>
   );
 }
