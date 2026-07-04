@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   ChevronLeft, Search, Home as HomeIcon, User, LayoutDashboard,
   MessageCircle, Camera, Check, X, LogOut, Pencil, Star, Phone,
-  MapPin, Flag, Send, ArrowRight, Lock, Mail, ChevronRight
+  MapPin, Flag, Send, ArrowRight, Lock, Mail, ChevronRight 
 } from 'lucide-react';
 import {
   supabase, signUp, signIn, signOut, getProfile, updateViewerCity,
